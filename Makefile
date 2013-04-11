@@ -109,7 +109,8 @@ ifeq ($(OS), Windows_NT)
 endif
 
 prepare_install::
-	$(shell echo $(GNAT_ROOT) > $(BUILD_DIR)/gnat.root)
+	$(MKDIR) $(BUILD_DIR)
+	echo $(GNAT_ROOT) > $(BUILD_DIR)/gnat.root
 
 install-clean::
 	$(RM) -rf $(prefix)/include/morzhol
